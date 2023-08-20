@@ -1,4 +1,4 @@
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/916a254720864c96ba0a4131c128f30c)](https://app.codacy.com/app/Tiktodz/github-stats?utm_source=github.com&utm_medium=referral&utm_content=Tiktodz/github-stats&utm_campaign=Badge_Grade_Settings) [![Generate Stats Images](https://github.com/Tiktodz/github-stats/actions/workflows/main.yml/badge.svg?branch=master)](https://github.com/Tiktodz/github-stats/actions/workflows/main.yml)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/916a254720864c96ba0a4131c128f30c)](https://app.codacy.com/gh/Tiktodz/github-stats/dashboard?utm_source=github.com&utm_medium=referral&utm_content=Tiktodz/github-stats&utm_campaign=Badge_Grade_Settings) [![Generate Stats Images](https://github.com/Tiktodz/github-stats/actions/workflows/main.yml/badge.svg?branch=master)](https://github.com/Tiktodz/github-stats/actions/workflows/main.yml)
 
 # [GitHub Stats Visualization](https://github.com/Tiktodz/github-stats)
 
