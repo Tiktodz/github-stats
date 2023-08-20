@@ -1,4 +1,4 @@
-[![Generate Stats Images](https://github.com/Tiktodz/github-stats/actions/workflows/main.yml/badge.svg?branch=master)](https://github.com/Tiktodz/github-stats/actions/workflows/main.yml)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/b2d26c172164470fa51b38e0c77a07d9)](https://www.codacy.com/gh/Tiktodz/github-stats/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Tiktodz/github-stats&amp;utm_campaign=Badge_Grade) [![Generate Stats Images](https://github.com/Tiktodz/github-stats/actions/workflows/main.yml/badge.svg?branch=master)](https://github.com/Tiktodz/github-stats/actions/workflows/main.yml)
 
 # [GitHub Stats Visualization](https://github.com/Tiktodz/github-stats)
 
