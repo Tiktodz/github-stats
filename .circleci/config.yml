@@ -1,0 +1,78 @@
+version: 2.1
+
+# Define the job
+jobs:
+  build:
+    # Set the executor to current Ubuntu 20.04
+    machine:
+      image: ubuntu-2004:current
+
+    # Define the steps of the job
+    steps:
+      # Check out the code
+      - checkout
+
+      # Set up Python 3.8
+      - run:
+          name: Set up Python 3.8
+          command: |
+            sudo apt-get update
+            sudo apt-get install -y python3.8 python3-pip python3-setuptools python3-wheel
+            python3 -m pip install --upgrade pip
+
+      # Install dependencies with `pip`
+      - run:
+          name: Install requirements
+          command: |
+            python3 -m pip install -r requirements.txt
+
+      # Generate all statistics images
+      - run:
+          name: Generate images
+          command: |
+            python3 --version
+            python3 generate_images.py
+
+      # Commit and push changes
+      - run:
+          name: Set url origin, commit
+          command: |
+            git remote set-url origin https://$ACCESS_TOKEN@github.com/$GITHUB_ACTOR/github-stats.git
+            git remote -v
+            git config --global user.name "Tiktodz/github-stats"
+            git config --global user.email "github-stats[bot]@Tiktodz.github.io"
+            curl -Lo .git/hooks/commit-msg https://gerrit-review.googlesource.com/tools/hooks/commit-msg
+            chmod u+x .git/hooks/commit-msg
+            git reset origin/master
+            git add .
+            # Force the build to succeed, even if no files were changed
+            git commit -m 'github-stats: Update generated files' || true
+            git push origin master -ff
+
+# Define the workflow
+workflows:
+  version: 2
+  # Manual trigger workflow
+  build:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only:
+                - master
+
+  # Scheduled daily update workflow
+  updateDaily:
+    triggers:
+      - schedule:
+          cron: "5 0 * * *"
+          filters:
+            branches:
+              only:
+                - master
+    jobs:
+      - build:
+          filters:
+            branches:
+              only:
+                - master
